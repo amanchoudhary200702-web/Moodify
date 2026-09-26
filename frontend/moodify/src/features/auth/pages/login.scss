@@ -1,0 +1,351 @@
+
+.loginpage {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(124, 58, 237, 0.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(59, 130, 246, 0.18),
+            transparent 35%
+        ),
+        #08080c;
+
+    color: white;
+    overflow: hidden;
+
+    /* Decorative glow */
+
+    &::before {
+        content: "";
+        position: fixed;
+        width: 400px;
+        height: 400px;
+
+        top: -150px;
+        right: -120px;
+
+        border-radius: 50%;
+
+        background: rgba(139, 92, 246, 0.12);
+        filter: blur(80px);
+
+        pointer-events: none;
+    }
+
+    &::after {
+        content: "";
+        position: fixed;
+        width: 350px;
+        height: 350px;
+
+        bottom: -150px;
+        left: -100px;
+
+        border-radius: 50%;
+
+        background: rgba(59, 130, 246, 0.1);
+        filter: blur(80px);
+
+        pointer-events: none;
+    }
+
+
+    /* =====================
+       LOGIN CARD
+    ====================== */
+
+    .formcontainer {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        max-width: 430px;
+
+        padding: 42px;
+
+        box-sizing: border-box;
+
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        border-radius: 24px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255, 255, 255, 0.08),
+                rgba(255, 255, 255, 0.025)
+            );
+
+        backdrop-filter: blur(25px);
+
+        box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+        animation: loginAppear 0.6s ease;
+
+
+        /* Logo / Brand */
+
+        &::before {
+            content: "♪ MOODIFY";
+
+            display: block;
+
+            margin-bottom: 28px;
+
+            color: #a78bfa;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-align: center;
+        }
+
+
+        /* Heading */
+
+        h1 {
+            margin: 0;
+
+            font-size: 34px;
+            font-weight: 750;
+
+            letter-spacing: -1px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #c4b5fd
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        /* Subtitle */
+
+        h1::after {
+            content: "Sign in to continue your musical journey";
+
+            display: block;
+
+            margin-top: 10px;
+
+            color: #8f8f9f;
+
+            font-size: 13px;
+            font-weight: 400;
+
+            letter-spacing: 0;
+
+            line-height: 1.5;
+        }
+
+
+        /* =====================
+           FORM
+        ====================== */
+
+        .form {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 20px;
+
+            margin-top: 32px;
+        }
+
+
+        /* Form Group */
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+
+            gap: 8px;
+
+            label {
+                width: auto;
+
+                color: #c4c4d0;
+
+                font-size: 13px;
+                font-weight: 600;
+
+                letter-spacing: 0.2px;
+            }
+
+
+            input {
+                width: 100%;
+
+                padding: 14px 15px;
+
+                box-sizing: border-box;
+
+                border: 1px solid rgba(255, 255, 255, 0.1);
+
+                border-radius: 11px;
+
+                outline: none;
+
+                background: rgba(0, 0, 0, 0.25);
+
+                color: white;
+
+                font-size: 14px;
+
+                transition:
+                    border-color 0.25s ease,
+                    box-shadow 0.25s ease,
+                    background 0.25s ease;
+
+                &::placeholder {
+                    color: #666675;
+                }
+
+                &:hover {
+                    border-color: rgba(167, 139, 250, 0.35);
+                }
+
+                &:focus {
+                    border-color: #8b5cf6;
+
+                    background: rgba(0, 0, 0, 0.35);
+
+                    box-shadow:
+                        0 0 0 3px rgba(139, 92, 246, 0.12),
+                        0 0 25px rgba(139, 92, 246, 0.08);
+                }
+            }
+        }
+
+
+        /* =====================
+           LOGIN BUTTON
+        ====================== */
+
+        button {
+            width: 100%;
+
+            margin-top: 5px;
+
+            padding: 14px;
+
+            border: none;
+            outline: none;
+
+            border-radius: 11px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #8b5cf6
+                );
+
+            color: white;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 30px rgba(124, 58, 237, 0.25);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                filter 0.25s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+
+                filter: brightness(1.1);
+
+                box-shadow:
+                    0 15px 35px rgba(124, 58, 237, 0.4);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+
+                opacity: 0.6;
+
+                transform: none;
+            }
+        }
+    }
+}
+
+
+/* =====================
+   ANIMATION
+====================== */
+
+@keyframes loginAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =====================
+   MOBILE
+====================== */
+
+@media (max-width: 500px) {
+
+    .loginpage {
+        padding: 20px;
+
+        .formcontainer {
+            padding: 32px 22px;
+
+            border-radius: 20px;
+
+            h1 {
+                font-size: 29px;
+            }
+
+            .form {
+                margin-top: 28px;
+            }
+        }
+    }
+}
+
